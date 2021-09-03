@@ -158,7 +158,7 @@ def generate_key_bytes(hash_alg, salt, key, nbytes):
     if len(salt) > 8:
         salt = salt[:8]
     while nbytes > 0:
-        hash_obj = hash_alg()
+        hash_obj = hash_alg(usedforsecurity=False)
         if len(digest) > 0:
             hash_obj.update(digest)
         hash_obj.update(b(key))

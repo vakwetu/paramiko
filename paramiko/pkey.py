@@ -177,7 +177,7 @@ class PKey(object):
             a 16-byte `string <str>` (binary) of the MD5 fingerprint, in SSH
             format.
         """
-        return md5(self.asbytes()).digest()
+        return md5(self.asbytes(), usedforsecurity=False).digest()
 
     def get_base64(self):
         """
